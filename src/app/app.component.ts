@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 
-import { DeferBasicComponent, DeferOnComponent, DeferWhenComponent } from './pages/home';
+import { DeferBasicComponent, DeferOnComponent, DeferPrefetchComponent, DeferWhenComponent } from './pages/home';
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: `
+    <!-- <app-defer-basic /> -->
+    <!-- <app-defer-when /> -->
+    <!-- <app-defer-on /> -->
+    <!-- <app-defer-prefetch /> -->
+  `,
   standalone: true,
-  imports: [DeferBasicComponent, DeferWhenComponent, DeferOnComponent],
+  imports: [DeferBasicComponent, DeferWhenComponent, DeferOnComponent, DeferPrefetchComponent],
 })
 export class AppComponent {
   title = 'angular-defer-v17';
