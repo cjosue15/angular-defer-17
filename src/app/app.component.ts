@@ -1,16 +1,26 @@
 import { Component } from '@angular/core';
+import { BannerComponent } from './components/banner.component';
+import { LoggerDirective } from './shared/directives/logger.directive';
+import { UppercasePipe } from './shared/pipes/uppercase.pipe';
 
-import { DeferBasicComponent, DeferOnComponent, DeferPrefetchComponent, DeferWhenComponent } from './pages/home';
 @Component({
   selector: 'app-root',
   template: `
-    <!-- <app-defer-basic /> -->
-    <!-- <app-defer-when /> -->
-    <!-- <app-defer-on /> -->
-    <!-- <app-defer-prefetch /> -->
+    <h1>Defer basic</h1>
+    
+    @defer {
+      <app-banner logger />
+      <p>{{ 'Angular defer block 💪' | uppercase }}</p>
+    } @placeholder {
+      <p>placeholder</p>
+    } @loading {
+      <p>Loading...</p>
+    } @error {
+      <p>Error</p>
+    }
   `,
   standalone: true,
-  imports: [DeferBasicComponent, DeferWhenComponent, DeferOnComponent, DeferPrefetchComponent],
+  imports: [BannerComponent, LoggerDirective, UppercasePipe],
 })
 export class AppComponent {
   title = 'angular-defer-v17';
