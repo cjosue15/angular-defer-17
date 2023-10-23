@@ -1,0 +1,33 @@
+:host {
+    display: block;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #b3bdc7;
+    padding-bottom: 8px;
+}
+
+.video-comment {
+    display: flex;
+    gap: 20px;
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .comment-content {
+        h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 0;
+            font-size: 14px;
+        }
+    }
+}
